@@ -1,6 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const elements = require("./elements");
+
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET",
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("API is running");
